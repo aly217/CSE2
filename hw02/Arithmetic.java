@@ -37,20 +37,20 @@
                    
             
         //calculate
-        totalSockCost$=nSocks*sockCost$;
-        sockTax$=totalSockCost$*taxPercent;
-        sockTax$=(int)(sockTax$*100)/100.0;
-        totalGlassCost$=nGlasses*glassCost$;
-        glassTax$=totalGlassCost$*taxPercent;
-        glassTax$=(int)(glassTax$*100)/100.0;
-        totalEnvelopeCost$=nEnvelopes*envelopeCost$;
-        envelopeTax$=totalEnvelopeCost$*taxPercent;
-        envelopeTax$=(int)(envelopeTax$*100)/100.0;
-        totalCost$=totalSockCost$+totalEnvelopeCost$+totalGlassCost$;
-        totalPurchace$=(totalCost$)+(taxPercent*totalCost$);
-        totalPurchace$=(int)(totalPurchace$*100)/100.0;
-        totalTax$=sockTax$+glassTax$+envelopeTax$;
-        totalTax$=(int)(totalTax$*100)/100.0;
+        totalSockCost$=nSocks*sockCost$;        //cost of socks
+        sockTax$=totalSockCost$*taxPercent;     //cost of socks tax
+        sockTax$=(int)(sockTax$*100)/100.0;     //converts tax to inter
+        totalGlassCost$=nGlasses*glassCost$;    //cost of glasses
+        glassTax$=totalGlassCost$*taxPercent;   //cost of glass tax
+        glassTax$=(int)(glassTax$*100)/100.0;   //converts tax to integer
+        totalEnvelopeCost$=nEnvelopes*envelopeCost$;        //cost of envelopes
+        envelopeTax$=totalEnvelopeCost$*taxPercent;         //cost of envelope tax
+        envelopeTax$=(int)(envelopeTax$*100)/100.0;         //converts tax to integer
+        totalCost$=totalSockCost$+totalEnvelopeCost$+totalGlassCost$;   //total cost with out tax
+        totalPurchace$=(totalCost$)+(taxPercent*totalCost$);            //final cost with all tax included
+        totalPurchace$=(int)(totalPurchace$*100)/100.0;                 //converts to integer
+        totalTax$=sockTax$+glassTax$+envelopeTax$;                      //total tax of all products
+        totalTax$=(int)(totalTax$*100)/100.0;                           //converts to integer
         
         //print
         System.out.println("The three items bought were Socks, Drinking Glasses, and Boxes of Envelopes");
