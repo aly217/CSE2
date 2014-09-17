@@ -4,28 +4,33 @@
 
 import java.util.Scanner;
 
+    
+    //define class
     public class FourDigits{
         
+        //define main method
         public static void main(String[] args){
             
+            //use scanner
             Scanner myScanner;
             myScanner= new Scanner(System.in);
             
+            //promt user for input
             System.out.print("Enter a double and I'll display the four digits to the right of the decimal point:");
             
-            double number= myScanner.nextInt();
+            double number= myScanner.nextDouble();
             
-            int num1;
-            int num2;
-            int num3;
+            number = number* 10000;
+            number = (int)(number);
             
-            int num = (int)(Math.random()*1000);
-            num1 = num % 10;
-            num2 = num / 10 % 10;
-            num3 = num / 100 % 10;
+            int numberX;
+            numberX =(int) number % 10000;
             
-            System.out.print("num1");
+            //print out only 4 digits after decimal
+            System.out.println("The four digits are "+numberX+"");
             
+            
+           
             
         }
     }
