@@ -12,11 +12,54 @@ public class Methods{
     b=getInt(scan);
     c=getInt(scan);
 
-    System.out.println("The larger of "+a+" and "+b+" is "+ methods.Larger(a,b));
-    System.out.println("The larger of "+a+", "+b+", and "+c+ " is "+methods.Larger(a,Larger(b,c)));
+    System.out.println("The larger of "+a+" and "+b+" is "+larger(a,b));
+    System.out.println("The larger of "+a+", "+b+", and "+c+ " is "+larger(a,larger(b,c)));
                        
-    System.out.println("It is "+methods.Ascending(a,b,c)+" that "+a+", "+b+ ", and "+c+" are in ascending order");
+    System.out.println("It is "+ascending(a,b,c)+" that "+a+", "+b+ ", and "+c+" are in ascending order");
                        
   }
+  
+  public static int getInt(Scanner scan) {
+    
+    while(true){
+      System.out.println("Enter an int");
+    
+      if(scan.hasNextInt()){
+       int value = scan.nextInt();
+        return value;
+      }
+      
+      else{
+        System.out.println("You did not enter an int");
+        scan.next();
+      }
+    
+    }
+  }
+  
+  
+  public static int larger(int a, int b) {
+    if(a>b){
+      return a;
+      
+    }
+      
+      else{
+        return b;
+      }
+    }
+    
+  public static boolean ascending(int a, int b, int c){
+    
+    if(a<b && b<c){
+      return true;
+    }
+    
+    else{
+      return false;
+    }
+  }
+  
+  
 }
   

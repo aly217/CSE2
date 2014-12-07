@@ -25,29 +25,55 @@ import java.util.Scanner;
             //prompt user for number of Big Macs and save that number in scanner
             System.out.print("Enter the number of Big Macs");
             
+            double totalCost=0;
             
             if(myScanner.hasNextInt()){
                 
                 int nBigMacs = myScanner.nextInt();
+                
+                
             
-                if (nBigMacs=> 0){
+                if (nBigMacs> 0){
                     
-                    double totalCost;
                     
                     totalCost = BigMac$*nBigMacs;
                     
-                    System.out.print("You ordered "+nBigMacs+" at a cost of "+nBigMacs*BigMac$+" = "+totalCost+".");
-                
+                    System.out.println("You ordered "+nBigMacs+" at a cost of "+nBigMacs+" x "+BigMac$+" = "+totalCost+".");
+                }
                 
                 else{
-                    System.out.print("You did not enter an integer > 0");
+                    System.out.println("You did not enter an integer > 0");
                 }
-            
-            else{
-                System.out.print("You did not enter an integer");
-            }
-                }
+                
             
             
         }
+        else{
+            System.out.println("You did not enter an integer");
+        }
+        
+        System.out.println("Do you want fries(Y/y/N/n) ");
+        
+        String fries= myScanner.next();
+        
+        if (fries.equals("Y") ) {
+            System.out.println("You ordered fries at $"+ Fries$);
+            
+            double total= totalCost+Fries$;
+            
+            System.out.println("Your total order is$"+total);
+        }
+        
+        else if(fries.equals("y")) {
+            System.out.println("You ordered fries at $"+ Fries$);
+            
+            double total=+ totalCost+Fries$;
+            
+            System.out.println("Your total order is $"+total);
+        }
+        
+        else{
+            System.out.println("You ordered no fries");
+        }
+    }
     }
